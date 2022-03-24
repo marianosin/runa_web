@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Navbar, Nav, NavDropdown, Form, FormControl, Container, Button} from 'react-bootstrap'
-export default class NavbarComp extends Component {
-  render() {
+export default function NavbarComp()  {
+  
     return (
       <div>
         <Navbar bg="light" expand="lg">
@@ -44,5 +44,5 @@ export default class NavbarComp extends Component {
         </Navbar>
       </div>
     )
-  }
+  
 }
