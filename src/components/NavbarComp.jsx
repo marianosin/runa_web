@@ -1,5 +1,8 @@
 import React from 'react'
 import { Navbar, Nav, NavDropdown, Form, FormControl, Container, Button} from 'react-bootstrap'
+
+
+//Navbar function containing component to walk around aplication.
 export default function NavbarComp()  {
   
     return (
