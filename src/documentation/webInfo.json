@@ -1,0 +1,23 @@
+{
+    "Creator": "Mariano Radusky",
+    "Description": "This is a React App built for a on line store for a julery business.",
+    "Sections": {
+        "Home":{
+            "Title":"Runa Joyas | Home",
+            "Description": "This page contains highlited information and products of the company,"
+        },
+        "About us":{
+            "Title":"Runa Joyas | Nosotros",
+            "Description": "This page contains information about the company."
+        },
+        "Store":{
+            "Title":"Runa Joyas | Tienda online",
+            "Description": "This page contains the online store."
+        },
+        "Contact":{
+            "Title":"Runa Joyas | Contacto",
+            "Description": "This page contains a contact form to write directly to a company employee."
+        }
+    }
+
+}

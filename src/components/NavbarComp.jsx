@@ -1,5 +1,6 @@
 import React from 'react'
 import { Navbar, Nav, NavDropdown, Form, FormControl, Container, Button} from 'react-bootstrap'
+import CartWidget from './CartWidget'
 
 
 //Navbar function containing component to walk around aplication.
@@ -33,6 +34,7 @@ export default function NavbarComp()  {
                     Contacto
                     </Nav.Link>
                 </Nav>
+                <CartWidget  />
                 <Form className="d-flex">
                     <FormControl
                     type="search"
