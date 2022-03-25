@@ -17,7 +17,7 @@ function App() {
       <div className="App">
         <NavbarComp/>
         
-        <ItemListContainer greetings={"Mariano"}/>
+        <ItemListContainer greetings={"Mariano"} />
       </div>
     </>
   );
