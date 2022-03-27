@@ -1,6 +1,6 @@
 //import logo from './logo.svg';
 import './App.css';
-
+import './style/main.css';
 
 
 //Import components of app
@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <div className="App">
-        <NavbarComp/>
+        <NavbarComp />
         
         <ItemListContainer greetings={"Mariano"} />
       </div>

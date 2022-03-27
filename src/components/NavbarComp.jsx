@@ -7,8 +7,8 @@ import CartWidget from './CartWidget'
 export default function NavbarComp()  {
   
     return (
-      <div>
-        <Navbar bg="light" expand="lg">
+      <div className='NavBar'>
+        <Navbar bg="dark" expand="lg">
             <Container fluid>
                 <Navbar.Brand href="#">Runa Joyas</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
