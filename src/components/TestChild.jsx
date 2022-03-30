@@ -17,16 +17,7 @@ export default function TestChild({products, delProd}){
              Hijo
              </h3>
              Lo siguiente viene de Contenedor padre
-             <div>
-                 <h4>Productos</h4>
-                 {products.map((value)=>{
-                     return(
-                        <div>
-                            {value}
-                        </div>
-                     )
-                 })}
-             </div>
+             
              
             <div>
 
