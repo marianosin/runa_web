@@ -4,7 +4,7 @@ import TestChild from "./TestChild"
 
 export default function TestContainer(){
 
-    let data = ["Producto 1", "Producto 2"]
+    let data = ["Producto 1", "Producto 2", "Producto 3"]
     
    return (
 
