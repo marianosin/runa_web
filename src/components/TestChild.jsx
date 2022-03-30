@@ -1,15 +1,41 @@
 //This component is just to train and learn all the concets before creating counter
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
 
 
 export default function TestChild({products, delProd}){
-
+    //hook
      const [x, setX] = useState(0);
 
-    
+     //Hook to lificicle. it tells react when to render certain variables
+     //just once
+     useEffect(()=>{
+         
+        //Aqui va fetch para llamar base de datos solo cuando se abre por primera vez
+        
+        } , [])
+    //When a state changes
+    useEffect(()=>{
+         
+        //dark light mode for example
+        
+        } , [x])
+    //At the moment of demounting. the array has to be empty
+    useEffect(()=>{
+         
+        return()=>{
+            //What to do when the user leavs the component
+        }
+        
+        } , [])
+    //When undefined, it renders all 
+    useEffect(()=>{
+         
+        
+        
+        } )
     return (
  
          <>
