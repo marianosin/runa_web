@@ -1,11 +1,13 @@
 //This component is just to train and learn all the concets before creating counter
 
+import { useState } from "react"
 
 
 
-export default function TestChild({products}){
 
-    let x = 0;
+export default function TestChild({products, delProd}){
+
+     const [x, setX] = useState(0);
 
     
     return (
@@ -15,18 +17,29 @@ export default function TestChild({products}){
              Hijo
              </h3>
              Lo siguiente viene de Contenedor padre
-             <p>{products.map((value)=>{
-                 return(
-                     <div>{value}</div>
-                 )
-             })} </p>
-             <div style={{backgroundColor: "green"}}>
-                 <div><button onClick={()=>{x = 1
-                    console.log(x)
-                }}> Cambia valor x</button></div>
-                 Valor de x: {x}
+             <div>
+                 <h4>Productos</h4>
+                 {products.map((value)=>{
+                     return(
+                        <div>
+                            {value}
+                        </div>
+                     )
+                 })}
              </div>
              
+            <div>
+
+                <button onClick={()=>{delProd()}}> 
+                Borra producto
+                </button>
+             </div>
+             <div style={{backgroundColor: "green", margin: "2%", padding: "1%", border: "solid 3px "}}>
+                 <button>Cambia x</button>
+                 <p>
+                     El valor de X es: {x}
+                 </p>
+             </div>
          </>
  
  
