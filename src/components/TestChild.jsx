@@ -21,6 +21,9 @@ export default function TestChild({products}){
                  )
              })} </p>
              <div style={{backgroundColor: "green"}}>
+                 <div><button onClick={()=>{x = 1
+                    console.log(x)
+                }}> Cambia valor x</button></div>
                  Valor de x: {x}
              </div>
              
