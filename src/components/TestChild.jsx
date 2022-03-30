@@ -35,7 +35,7 @@ export default function TestChild({products, delProd}){
                 </button>
              </div>
              <div style={{backgroundColor: "green", margin: "2%", padding: "1%", border: "solid 3px "}}>
-                 <button onClick={(x)=> {setX(++x);}}>Cambia x</button>
+                 <button onClick={()=> { setX(x+1);}}>+</button><button onClick={()=> { setX(x-1);}}>-</button>
                  <p>
                      El valor de X es: {x}
                  </p>
