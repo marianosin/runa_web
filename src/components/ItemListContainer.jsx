@@ -4,16 +4,20 @@ import { useState } from 'react'
 import { CardGroup} from 'react-bootstrap'
 import CardNewProducts from './CardNewProducts'
 import ItemCount from './ItemCount'
-export default function ItemListContainer({greetings}){
+export default function ItemListContainer(){
 
-    //let product = {"name":"collar", "stock":100, "price":2300}
     
-    let [product, productController] = useState({"name":"collar", "stock":10, "price":2300, "q":0})
-    console.log(product)
-   return (
+    let products = {"name":"collar", "stock":10, "price":2300}
+    
+    function onAdd(purchase){
+
+        alert(purchase)
+    }
+   
+    return (
 
         <div>
-            <ItemCount product={product} productController={productController} />
+            <ItemCount products={products} onAdd={onAdd} />
         </div>
 
 
