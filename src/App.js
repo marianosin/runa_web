@@ -18,10 +18,10 @@ function App() {
         
         <NavbarComp />
         
-        <ItemListContainer greetings={"Mariano"} />
+        <ItemListContainer  />
 
 
-        <TestContainer />
+        
 
       </div>
     </>
