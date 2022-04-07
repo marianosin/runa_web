@@ -4,18 +4,24 @@ import { Form, FormControl, Container, Button} from 'react-bootstrap'
 
 
 
-export default function ItemCount({products, onAdd}){
+export default function ItemCount({stock}){
 
     const [count,setCount] = useState(1)
     
     function add(){
-        setCount(count + 1);
+        if (count<stock) {
+            setCount(count + 1);
+        }
+        
     }
     function substract() {
-        setCount(count -1)
+        if (count > 0) {
+            setCount(count -1);
+        }
+        
     }
     function onAdd(count) {
-        alert(`You are buying ${parseInt(count)} items of this product. `)
+        alert('You are buying ' + count +' items of this product.')
     }
     return (
  

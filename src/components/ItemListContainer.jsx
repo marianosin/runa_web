@@ -17,7 +17,7 @@ export default function ItemListContainer(){
     return (
 
         <div>
-            <ItemCount products={products} onAdd={onAdd} />
+            <ItemCount stock={10} />
         </div>
 
 
