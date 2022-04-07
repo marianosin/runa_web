@@ -1,6 +1,6 @@
 import React from 'react'
 import { Navbar, Nav, NavDropdown, Form, FormControl, Container, Button} from 'react-bootstrap'
-import CartWidget from '../CartWidget'
+import CartWidget from '../backups/CartWidget'
 
 
 //Navbar function containing component to walk around aplication.

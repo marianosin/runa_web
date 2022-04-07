@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { CardGroup} from 'react-bootstrap'
-import CardNewProducts from '../CardNewProducts'
+import CardNewProducts from '../backups/CardNewProducts'
 import ItemCount from './ItemCount'
 export default function ItemListContainer(){
 
