@@ -1,19 +1,16 @@
 import React from 'react'
 import Item from './Item'
 
-//Maps content
-
-
-function ItemList({products}) {
+export default function ItemList({products}) {
+    console.log(products)
   return (
     products.map(p =>(
         <Item
-            key={p.id}
+            key= {p.id}
             name= {p.name}
-            price= {p.price}/>
-  ))
+            price= {p.price}
+            stock={p.stock}  />
+    ))
+    
   )
-  
 }
-
-export default ItemList

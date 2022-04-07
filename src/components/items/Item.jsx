@@ -17,7 +17,7 @@ export default function Item({id, name, stock, price}) {
                     Precio: ARS {price}
                 </Card.Text>
                 <Card.Text>
-                    <ItemCount stock={5}/>
+                    <ItemCount stock={stock}/>
                 </Card.Text>
                 <Button  variant="primary">Agregar a carrito</Button>
                 </Card.Footer>
