@@ -6,28 +6,24 @@ import { Form, FormControl, Container, Button} from 'react-bootstrap'
 
 export default function ItemCount({products, onAdd}){
 
-    const [purchase,setPurchase] = useState(1)
+    const [count,setCount] = useState(1)
     
-    
+    function add(){
+        setCount(count + 1);
+    }
+    function substract() {
+        setCount(count -1)
+    }
+    function onAdd(count) {
+        alert(`You are buying ${parseInt(count)} items of this product. `)
+    }
     return (
  
-         <div>
-             <h3>{products.name} </h3>
-             <p>Precio: ARS {products.price} </p>
-             <p>En stock: {products.stock} </p>
-             <Container>
-                <Form className="d-flex">
-                    <Button variant="outline-success" onClick={()=>{(purchase> 0 ) ? setPurchase(purchase-1): setPurchase(purchase+0); }}>-</Button>
-                    <FormControl
-                    type="number"
-                    value={purchase}
-                    className="me-2"
-                    aria-label="counter"
-                    />
-                    <Button variant="outline-success" onClick={()=>{(purchase< products.stock ) ? setPurchase(purchase+1): setPurchase(purchase+0) }}>+</Button>
-                    <div><Button variant="outline-success" onClick={(purchase)=>{onAdd(purchase)}} >Agregar al carrito</Button></div>
-                </Form>
-            </Container>
+         <div style={{marginTop: "30px"}}>
+             <Button onClick={substract} variant="danger">-</Button>
+            <p>{count} </p>
+             <Button onClick={add} variant="success">+</Button>
+             <Button onClick={onAdd} variant="primary">Agregar a carrito</Button>
          </div>
  
  
