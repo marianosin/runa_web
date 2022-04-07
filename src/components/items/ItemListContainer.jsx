@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { CardGroup} from 'react-bootstrap'
-import CardNewProducts from './CardNewProducts'
+import CardNewProducts from '../CardNewProducts'
 import ItemCount from './ItemCount'
 export default function ItemListContainer(){
 
@@ -11,7 +11,8 @@ export default function ItemListContainer(){
     
     function onAdd(purchase){
 
-        alert(purchase)
+        alert(purchase);
+        
     }
    
     return (

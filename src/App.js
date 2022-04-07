@@ -5,9 +5,9 @@ import './style/main.css';
 
 //Import components of app
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavbarComp from './components/NavbarComp';
-import ItemListContainer from './components/ItemListContainer';
-import TestContainer from './components/TestContainer';
+import NavbarComp from './components/navbar/NavbarComp';
+import ItemListContainer from './components/items/ItemListContainer';
+
 //Main comp. Here we mount all components to be rendered
 function App() {
 
