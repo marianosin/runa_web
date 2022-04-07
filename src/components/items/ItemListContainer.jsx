@@ -12,7 +12,7 @@ export default function ItemListContainer(){
      const [items, setItems] = useState([]);
 
      useEffect(()=>{
-         proms(3000, products)
+         proms(2000, products)
          .then(result => setItems(result))
          .catch(error =>console.log(error))
      }, [items])
