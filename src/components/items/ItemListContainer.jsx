@@ -7,13 +7,7 @@ import ItemCount from './ItemCount'
 export default function ItemListContainer(){
 
     
-    let products = {"name":"collar", "stock":10, "price":2300}
-    
-    function onAdd(purchase){
 
-        alert(purchase);
-        
-    }
    
     return (
 
