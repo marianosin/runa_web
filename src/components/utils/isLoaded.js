@@ -13,7 +13,7 @@ const isLoaded = (time,task) =>{
             if(isOk){
                 resolve(task);
             } else {
-                reject("Error")
+                reject(task)
             }
         }, time)
     })
