@@ -1,7 +1,21 @@
-.Novedades {
-    margin-top: 5%;
-    h2 {
-        font-size: 1.3rem;
-        color: red;
+.mainContainer {
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: center;
+    align-items: center;
+}
+.mainCardSize {
+    width: 80%;
+
+    margin: 3%;
+}
+
+
+
+@media (min-width: 791px) {
+    .mainCardSize {
+        width: 30%;
+        
     }
+    
 }

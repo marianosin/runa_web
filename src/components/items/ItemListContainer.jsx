@@ -20,8 +20,8 @@ export default function ItemListContainer(){
    
     return (
 
-        <div>
-            <ItemList products={items}/>
+        <div className='mainContainer'>
+            <ItemList products={items}  />
         </div>
 
 

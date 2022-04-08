@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,cAAc,CAAC;EACX,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,QAAQ;EACnB,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;CACtB;;AACD,AAAA,aAAa,CAAC;EACV,KAAK,EAAE,GAAG;EAEV,MAAM,EAAE,EAAE;CACb;;AAID,MAAM,EAAE,SAAS,EAAE,KAAK;EACpB,AAAA,aAAa,CAAC;IACV,KAAK,EAAE,GAAG;GAEb",
+    "sources": [
+        "Novedades.scss"
+    ],
+    "names": [],
+    "file": "Novedades.css"
+}
