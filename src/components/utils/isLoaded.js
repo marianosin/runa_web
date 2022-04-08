@@ -1,6 +1,6 @@
 let isOk = true;
 
-const proms = (time,task) =>{
+const isLoaded = (time,task) =>{
     return new Promise((resolve, reject)=>{
         setTimeout(()=>{
             if(isOk){
@@ -12,4 +12,4 @@ const proms = (time,task) =>{
     })
 }
 
-export default proms;
+export default isLoaded;
