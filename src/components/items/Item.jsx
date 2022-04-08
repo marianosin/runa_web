@@ -4,9 +4,9 @@ import ItemCount from './ItemCount'
 export default function Item({id, name, stock, price}) {
   return (
 
-    <Card key={id} className="mainCardSize">
+    <Card key={id} className="mainCardSize cardStyle">
                 
-                <Card.Body>
+                <Card.Body className='cardBody'>
                 <Card.Title>{name} </Card.Title>
                 <Card.Img variant="top" src="https://joyasnehgne.cl/wp-content/uploads/2019/10/IMG-3508.jpg" />
                 <Card.Text>
