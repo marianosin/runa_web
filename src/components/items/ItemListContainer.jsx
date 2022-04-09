@@ -12,14 +12,15 @@ export default function ItemListContainer(){
     //A Promise executes something when a server sends data (easy explication)
     //Use effect renders when object is changed but just the object in business 
     useEffect(()=>{
-         isLoaded(2000, products)
-         .then(result => setItems(result))
-         .catch(error =>console.log(error))
+         isLoaded(2000, products)// This promise makes the app wait
+         .then(result => setItems(result)) //The state is asigned to Products
+         .catch(error =>console.log(error))//If error
      }, [items])
 
-   
-    return (
 
+    
+    return (
+        //This is just the container
         <div className='mainContainer'>
             <ItemList products={items}  />
         </div>

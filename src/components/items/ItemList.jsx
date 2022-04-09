@@ -5,6 +5,7 @@ export default function ItemList({products}) {
     
   return (
     products.map(p =>(
+      //Item contains a card that recives these parameters
         <Item
             key= {p.id}
             name= {p.name}
