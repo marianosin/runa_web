@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavbarComp from './components/navbar/NavbarComp';
 import ItemListContainer from './components/items/ItemListContainer';
 import TestContainer from './components/tests/TestContainer';
+import ItemDetailContainer from './components/items/ItemDetailContainer';
 
 //Main comp. Here we mount all components to be rendered
 function App() {
@@ -20,7 +21,7 @@ function App() {
         <NavbarComp />
         
         {/*<ItemListContainer  />*/}
-        <TestContainer/>
+        <ItemDetailContainer/>
 
         
 
