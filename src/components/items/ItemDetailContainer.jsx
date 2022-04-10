@@ -11,7 +11,7 @@ export default function ItemDetailContainer() {
         //Runs in third place setting state as detailTestProduct
       loadsDetails(2000, detailTestProduct)
       .then(res=>{
-          console.log(res) //Here we should call setItem
+          setItem(res) //Here we should call setItem
       })
       .catch(error=> console.log(error))
       
