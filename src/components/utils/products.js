@@ -12,5 +12,16 @@ const products = [
         price: 3400.00
     }
 ]
-
 export default products
+
+let detailTestProduct = {
+    id: 1,
+    category: "prendedores",
+    name: "Prendedor de plata",
+    stock: 13,
+    price: 2900,
+    description: "Prendedor de plata de alta calidad. Se elabora a mano por productores locales."
+}
+
+export {detailTestProduct}
+
