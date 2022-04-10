@@ -17,7 +17,7 @@ export default function TestContainer() {
             .then(response => response.json())
             .then(result => {
                 //This is what the promise will do if everything is ok
-
+                console.log(result)
                 setUniversities(result)
             })
             .catch(error => console.log('error', error));
@@ -30,7 +30,11 @@ export default function TestContainer() {
 
 
   return (
+
     <div>
+        <h1>
+          Test header
+        </h1>
         <TestComponent universities={universities} />  
     </div>
   )
