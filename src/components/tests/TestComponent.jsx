@@ -3,7 +3,7 @@ import {Card, Button} from 'react-bootstrap'
 export default function TestComponent({id, name, stock, price,}) {
   return (
     <div>
-                    <Card key={id} className="mainCardSize cardStyle">
+              <Card key={id} className="mainCardSize cardStyle">
                 
                 <Card.Body className='cardBody'>
                 <Card.Title>{name} </Card.Title>
