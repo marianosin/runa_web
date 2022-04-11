@@ -8,9 +8,9 @@ export default function NavbarComp()  {
   
     return (
       <div className='NavBar'>
-        <Navbar bg="dark" expand="lg">
+        <Navbar bg="light" expand="lg">
             <Container fluid>
-                <Navbar.Brand href="#">Runa Joyas</Navbar.Brand>
+                <Link to={'/'} style={{textDecoration:'none'}} > <Navbar.Brand href="#">Runa Joyas</Navbar.Brand></Link>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                 <Nav
@@ -22,13 +22,17 @@ export default function NavbarComp()  {
                     <Nav.Link ><Link to={'/nosotros'}>Nosotros</Link></Nav.Link>
                     <NavDropdown title="Productos" id="navbarScrollingDropdown">
                     <NavDropdown.Item ><Link to={'/dynamicelement/collares'}>Collares</Link></NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">Pulseras</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">Colgantes</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">Aros</NavDropdown.Item>
+                    <NavDropdown.Item >Pulseras</NavDropdown.Item>
+                    <NavDropdown.Item >Colgantes</NavDropdown.Item>
+                    <NavDropdown.Item >Aros</NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action5">
-                        Todos los productos
-                    </NavDropdown.Item>
+                    
+                        <NavDropdown.Item >
+                            <Link to={'/category/all'}>
+                                Todos los productos
+                            </Link>
+                        </NavDropdown.Item>
+                    
                     </NavDropdown>
                     <Nav.Link href="#" disabled>
                     Contacto
