@@ -10,6 +10,7 @@ import ItemListContainer from './components/items/ItemListContainer';
 import TestContainer from './components/tests/TestContainer';
 import ItemDetailContainer from './components/items/ItemDetailContainer';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import DynamicElement from './components/items/DynamicElement';
 //Main comp. Here we mount all components to be rendered
 function App() {
 
@@ -23,7 +24,8 @@ function App() {
           <Routes>
             <Route exact path='/' element={<ItemListContainer  />}/>
             <Route exact path='/productdetail' element={<TestContainer  />}/>
-            <Route exact path='/test' element={<div>Página test para probar router</div>}/>
+            <Route exact path='/nosotros' element={<div>Página test para probar router</div>}/>
+            <Route exact path='/dynamicelement/:id' element={<DynamicElement  />}/>
           </Routes>   
           
 
