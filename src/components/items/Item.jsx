@@ -1,11 +1,12 @@
 import React from 'react'
 import {Card, Button} from 'react-bootstrap'
 import ItemCount from './ItemCount'
+import { Link } from 'react-router-dom'
 export default function Item({id, name, stock, price}) {
   return (
-
+    
     <Card key={id} className="mainCardSize cardStyle">
-                
+    <Link to={`/dynamicelement/${id}`} style={{ textDecoration: 'none' }} >          
                 <Card.Body className='cardBody'>
                 <Card.Title>{name} </Card.Title>
                 <Card.Img variant="top" src="https://joyasnehgne.cl/wp-content/uploads/2019/10/IMG-3508.jpg" />
@@ -23,7 +24,9 @@ export default function Item({id, name, stock, price}) {
                 </Card.Text>
                 <Button  variant="primary">Agregar a carrito</Button>
                 </Card.Footer>
+                </Link>
             </Card>
+        
 
   )
 }
