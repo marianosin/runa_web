@@ -1,7 +1,7 @@
 import React from 'react'
 import { Navbar, Nav, NavDropdown, Form, FormControl, Container, Button} from 'react-bootstrap'
 import CartWidget from '../backups/CartWidget'
-
+import { Link } from 'react-router-dom'
 
 //Navbar function containing component to walk around aplication.
 export default function NavbarComp()  {
@@ -18,10 +18,10 @@ export default function NavbarComp()  {
                     style={{ maxHeight: '100px' }}
                     navbarScroll
                 >
-                    <Nav.Link href="./">Home</Nav.Link>
-                    <Nav.Link href="#nosotros">Nosotros</Nav.Link>
+                    <Nav.Link ><Link to={'/'}>Home</Link></Nav.Link>
+                    <Nav.Link ><Link to={'/nosotros'}>Nosotros</Link></Nav.Link>
                     <NavDropdown title="Productos" id="navbarScrollingDropdown">
-                    <NavDropdown.Item href="#action3">Collares</NavDropdown.Item>
+                    <NavDropdown.Item ><Link to={'/dynamicelement/collares'}>Collares</Link></NavDropdown.Item>
                     <NavDropdown.Item href="#action4">Pulseras</NavDropdown.Item>
                     <NavDropdown.Item href="#action4">Colgantes</NavDropdown.Item>
                     <NavDropdown.Item href="#action4">Aros</NavDropdown.Item>
