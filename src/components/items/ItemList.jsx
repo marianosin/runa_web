@@ -10,6 +10,7 @@ export default function ItemList({products}) {
           
             <Item
                 key= {p.id}
+                category={p.category}
                 id = {p.id}
                 name= {p.name}
                 price= {p.price}
