@@ -21,7 +21,7 @@ export default function NavbarComp()  {
                     <Nav.Link ><Link to={'/'}>Home</Link></Nav.Link>
                     <Nav.Link ><Link to={'/nosotros'}>Nosotros</Link></Nav.Link>
                     <NavDropdown title="Productos" id="navbarScrollingDropdown">
-                    <NavDropdown.Item ><Link to={'/dynamicelement/collares'}>Collares</Link></NavDropdown.Item>
+                    <NavDropdown.Item ><Link to={'/category/collares'}>Collares</Link></NavDropdown.Item>
                     <NavDropdown.Item >Pulseras</NavDropdown.Item>
                     <NavDropdown.Item >Colgantes</NavDropdown.Item>
                     <NavDropdown.Item >Aros</NavDropdown.Item>
