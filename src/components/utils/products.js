@@ -10,7 +10,7 @@ const products = [
     },
     {
         id: 2,
-        category: "Otro producto",
+        category: "otros",
         image:"https://http2.mlstatic.com/D_NQ_NP_916611-MLA49335814997_032022-O.webp",
         name: "Prendedor de oro",
         stock: 13,
