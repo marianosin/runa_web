@@ -18,19 +18,19 @@ export default function NavbarComp()  {
                     style={{ maxHeight: '100px' }}
                     navbarScroll
                 >
-                    <Nav.Link ><Link to={'/'}>Home</Link></Nav.Link>
-                    <Nav.Link ><Link to={'/nosotros'}>Nosotros</Link></Nav.Link>
+                    <Nav.Link href={'/'}>Home</Nav.Link>
+                    <Nav.Link href={'/nosotros'}>Nosotros</Nav.Link>
                     <NavDropdown title="Productos" id="navbarScrollingDropdown">
-                    <NavDropdown.Item ><Link to={'/category/collares'}>Collares</Link></NavDropdown.Item>
+                    <NavDropdown.Item href={'/category/collares'}>Collares</NavDropdown.Item>
                     <NavDropdown.Item >Pulseras</NavDropdown.Item>
                     <NavDropdown.Item >Colgantes</NavDropdown.Item>
                     <NavDropdown.Item >Aros</NavDropdown.Item>
                     <NavDropdown.Divider />
                     
-                        <NavDropdown.Item >
-                            <Link to={'/category/all'}>
+                        <NavDropdown.Item href='/category/all' >
+                            
                                 Todos los productos
-                            </Link>
+                            
                         </NavDropdown.Item>
                     
                     </NavDropdown>

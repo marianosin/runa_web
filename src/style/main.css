@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+}
+
 .NavBar {
   background-color: red;
   color: white;
@@ -30,19 +34,44 @@
 }
 
 .cardStyle {
+  border-radius: 20% 0% 20% 0%;
+  background-color: black;
   border-radius: 25% 4% 25% 4%;
+  border: 0;
+}
+
+.cardBody {
+  color: red;
+  font-size: 11px;
+  border: 0.5px solid red;
+  border-radius: 25% 4% 25% 4%;
+  -webkit-transition: ease .2s;
+  transition: ease .2s;
   -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
           box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
-.cardBody {
-  border: 0.5px solid #3633f14d;
-  border-radius: 25% 4% 25% 4%;
+.cardBody:hover {
+  border: 1 solid blue;
+  border-radius: 4% 25% 4% 25%;
+}
+
+.cardBody img {
+  border-radius: 50% 50% 50% 50%;
+  width: 50%;
+}
+
+.card {
+  border: none;
+}
+
+.card a {
+  text-decoration: none;
 }
 
 @media (min-width: 791px) {
   .mainCardSize {
-    width: 30%;
+    width: 300px;
   }
 }
 /*# sourceMappingURL=main.css.map */
