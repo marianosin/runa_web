@@ -13,6 +13,8 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import DynamicElement from './components/items/CategoryContainer';
 import CategoryContainer from './components/items/CategoryContainer';
 import ItemDetail from './components/items/ItemDetail';
+import Cart from './components/cart/Cart';
+const item= {name:'test', price:4, quantity:1, total:3}
 //Main comp. Here we mount all components to be rendered
 function App() {
 
@@ -25,6 +27,7 @@ function App() {
           <NavbarComp />
           <Routes>
             <Route exact path='/' element={<ItemListContainer  />}/>
+            <Route path='/cart' element={<Cart  />}/>
             <Route exact path='/productdetail' element={<TestContainer  />}/>
             <Route exact path='/nosotros' element={<div>Página test para probar router</div>}/>
             <Route exact path='/category/all' element={<CategoryContainer/>}/>
