@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { Form, FormControl, Container, Button} from 'react-bootstrap'
+import {Button} from 'react-bootstrap'
 
 
 
 
-export default function ItemCount({stock}){
+export default function ItemCount({stock, onAdd}){
 
     const [count,setCount] = useState(1)
     
@@ -20,16 +20,14 @@ export default function ItemCount({stock}){
         }
         
     }
-    function onAdd(count) {
-        alert('You are buying ' + count +' items of this product.')
-    }
+    const handleClick = () => {onAdd(count)}
     return (
  
          <div style={{marginTop: "30px"}}>
              <Button onClick={substract} variant="danger">-</Button>
             <p>{count} </p>
              <Button onClick={add} variant="success">+</Button>
-             <Button onClick={onAdd} variant="primary">Agregar a carrito</Button>
+             <Button onClick={handleClick} variant="primary">Agregar a carrito</Button>
          </div>
  
  
