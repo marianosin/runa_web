@@ -4,8 +4,8 @@ import CartWidget from '../backups/CartWidget'
 import { Link } from 'react-router-dom'
 
 //Navbar function containing component to walk around aplication.
-export default function NavbarComp()  {
-  
+export default function NavbarComp({categories})  {
+
     return (
       <div className='NavBar'>
         <Navbar bg="light" expand="lg">
@@ -21,17 +21,11 @@ export default function NavbarComp()  {
                     <Nav.Link href={'/'}>Home</Nav.Link>
                     <Nav.Link href={'/nosotros'}>Nosotros</Nav.Link>
                     <NavDropdown title="Productos" id="navbarScrollingDropdown">
-                    <NavDropdown.Item href={'/category/collares'}>Collares</NavDropdown.Item>
-                    <NavDropdown.Item >Pulseras</NavDropdown.Item>
-                    <NavDropdown.Item >Colgantes</NavDropdown.Item>
-                    <NavDropdown.Item >Aros</NavDropdown.Item>
-                    <NavDropdown.Divider />
+                    {categories.map((c) => (<NavDropdown.Item 
+                    href={`/category/${c.category}`}>{c.category}</NavDropdown.Item>
+                    ))}
                     
-                        <NavDropdown.Item href='/category/all' >
-                            
-                                Todos los productos
-                            
-                        </NavDropdown.Item>
+                    
                     
                     </NavDropdown>
                     <Nav.Link href="#" disabled>
