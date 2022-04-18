@@ -2,17 +2,18 @@ import React from 'react'
 import {Card, Button} from 'react-bootstrap'
 import ItemCount from './ItemCount'
 import { Link } from 'react-router-dom'
-export default function Item({id, category, name, stock, price}) {
+export default function Item({id, category, name, stock, description, price, image}) {
   return (
     
     <Card key={id} className="mainCardSize cardStyle" style={{border: 'none'}}>
     <Link to={`/category/${category}/product/${id}`}  >          
                 <Card.Body className='cardBody'>
                 <Card.Title>{name} </Card.Title>
-                <Card.Img variant="top" src="https://joyasnehgne.cl/wp-content/uploads/2019/10/IMG-3508.jpg" />
+                <Card.Img variant="top" src={image} />
                 <Card.Text>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto mollitia, error ut in nulla hic fuga nesciunt? In quod eaque consequuntur, incidunt obcaecati iure maiores?
+                    <p>{description} </p>
                     <p>En stock: {stock} unidades </p>
+                    <p>Precio:{price} </p>
                     
                 </Card.Text>
 
