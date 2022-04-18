@@ -15,7 +15,7 @@ export default function ItemDetail({item}) {
   return (
     <div style={{display: "flex"}}>
         <img src={item.image} alt="Foto del producto" style={{width: "20%"}} />
-        <p style={{width: "100%"}}>Descripción: {item.description} </p>
+        <p style={{width: "100%"}}>Descripción: {item.descriptionExtended} </p>
         <p>Stock:{item.stock} </p>
         <p>Precio: $ {item.price} ARS </p>
         {(toCart === 0) ? <ItemCount stock={item.stock} onAdd={onAdd}/> : <Button href='/cart' variant="primary">Ir al carrito</Button>}

@@ -6,6 +6,7 @@ const products = [
         name: "Prendedor de plata",
         stock: 13,
         price: 2900,
+        descriptionExtended: "Prendedor de plata de alta calidad. Texto extendido",
         description: "Descripcion de producto 1"
     },
     {
@@ -15,6 +16,7 @@ const products = [
         name: "Prendedor de oro",
         stock: 16,
         price: 2900,
+        descriptionExtended: "Descripción extendida de producto 2",
         description: "Descripción del producto 2"
     },
     {
@@ -24,6 +26,7 @@ const products = [
         name: "Collares de plata",
         stock: 116,
         price: 6900,
+        descriptionExtended: "Descripción extendida de producto 3",
         description: "Descripción del producto 3"
     },
     {
@@ -33,6 +36,7 @@ const products = [
         name: "Producto 4",
         stock: 6,
         price: 200,
+        descriptionExtended: "Descripción extendida de producto 4",
         description: "Descripción del producto 4"
     }
     
