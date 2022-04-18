@@ -13,6 +13,8 @@ export default function ItemList({products}) {
                 category={p.category}
                 id = {p.id}
                 name= {p.name}
+                image = {p.image}
+                description= {p.description}
                 price= {p.price}
                 stock={p.stock}  />
           

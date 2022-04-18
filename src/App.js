@@ -14,6 +14,7 @@ import DynamicElement from './components/items/CategoryContainer';
 import CategoryContainer from './components/items/CategoryContainer';
 import ItemDetail from './components/items/ItemDetail';
 import Cart from './components/cart/Cart';
+import NavContainer from './components/navbar/NavContainer';
 const item= {name:'test', price:4, quantity:1, total:3}
 //Main comp. Here we mount all components to be rendered
 function App() {
@@ -24,13 +25,14 @@ function App() {
       <div className="App">
         {/*Everything has to be inside this router */}
         <BrowserRouter>
-          <NavbarComp />
+          <NavContainer />
           <Routes>
             <Route exact path='/' element={<ItemListContainer  />}/>
             <Route path='/cart' element={<Cart  />}/>
             <Route exact path='/productdetail' element={<TestContainer  />}/>
             <Route exact path='/nosotros' element={<div>Página test para probar router</div>}/>
-            <Route exact path='/category/all' element={<CategoryContainer/>}/>
+            
+            <Route exact path='/category/:category' element={<CategoryContainer  />}/>
             <Route exact path='/category/:category/product/:id' element={<ItemDetailContainer  />}/>
           </Routes>   
           
