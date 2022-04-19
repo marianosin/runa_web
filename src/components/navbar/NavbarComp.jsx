@@ -44,7 +44,7 @@ export default function NavbarComp({categories})  {
                     aria-label="Search"
                     onChange={handleSearch}
                     />
-                    <Link to={`/search/${searchKey} `} className="btn btn-primary" >Sign up</Link>
+                    <Link to={`/search/${searchKey} `} className="btn btn-primary" >Buscar</Link>
                 </Form>
                 </Navbar.Collapse>
                 </Container>

@@ -5,10 +5,10 @@ import products from '../utils/products'
 export default function SearchContainer() {
 
     const { search } = useParams()
-    const searchProducts = products.filter(product => product.name.toLowerCase().includes(search.toLowerCase()))
+    const searchProducts = products.filter(product => product.name.toLowerCase().includes(search.toLowerCase())) || []
     return (
         <div style={{display: "flex"}}>
-    {searchProducts.map((p) =>(
+    {((searchProducts===[]) ? `No se encontró ningún producto con este nombre: ${search}` : searchProducts.map((p) =>(
         <Item
                 key= {p.id}
                 category={p.category}
@@ -17,7 +17,7 @@ export default function SearchContainer() {
                 image = {p.image}
                 description= {p.description}
                 price= {p.price}
-                stock={p.stock}  />))}
+                stock={p.stock}  />)))}
         </div>
   )
 }
