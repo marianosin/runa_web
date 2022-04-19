@@ -9,6 +9,7 @@ export default function NavbarComp({categories})  {
     function handleSearch(e){
         setSearchKey(e.target.value)
     }
+    
     return (
       <div className='NavBar'>
         <Navbar bg="light" expand="lg">
@@ -24,11 +25,9 @@ export default function NavbarComp({categories})  {
                     <Nav.Link href={'/'}>Home</Nav.Link>
                     <Nav.Link href={'/nosotros'}>Nosotros</Nav.Link>
                     <NavDropdown title="Productos" id="navbarScrollingDropdown">
-                    {categories.map((c) => (<NavDropdown.Item 
-                    href={`/category/${c.category}`}>{c.category}</NavDropdown.Item>
-                    ))}
-                    
-                    
+                    <Nav.Link href={`/category/prendedores`}>Prendedores</Nav.Link>
+                    <Nav.Link href={`/category/collares`}>Collares</Nav.Link>
+                    <Nav.Link href={`/category/otros`}>Otros</Nav.Link>
                     
                     </NavDropdown>
                     <Nav.Link href="#" disabled>
