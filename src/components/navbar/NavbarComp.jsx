@@ -2,10 +2,13 @@ import React from 'react'
 import { Navbar, Nav, NavDropdown, Form, FormControl, Container, Button} from 'react-bootstrap'
 import CartWidget from '../backups/CartWidget'
 import { Link } from 'react-router-dom'
-
+import { useState } from 'react'
 //Navbar function containing component to walk around aplication.
 export default function NavbarComp({categories})  {
-
+    const [searchKey,setSearchKey] = useState('Buscar producto')
+    function handleSearch(e){
+        setSearchKey(e.target.value)
+    }
     return (
       <div className='NavBar'>
         <Navbar bg="light" expand="lg">
@@ -36,11 +39,12 @@ export default function NavbarComp({categories})  {
                 <Form className="d-flex">
                     <FormControl
                     type="search"
-                    placeholder="Search"
+                    placeholder={`${searchKey}`}
                     className="me-2"
                     aria-label="Search"
+                    onChange={handleSearch}
                     />
-                    <Button variant="outline-success">Search</Button>
+                    <Link to={`/search/${searchKey} `} className="btn btn-primary" >Sign up</Link>
                 </Form>
                 </Navbar.Collapse>
                 </Container>

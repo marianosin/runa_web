@@ -15,6 +15,7 @@ import CategoryContainer from './components/items/CategoryContainer';
 import ItemDetail from './components/items/ItemDetail';
 import Cart from './components/cart/Cart';
 import NavContainer from './components/navbar/NavContainer';
+import SearchContainer from './components/items/SearchContainer';
 const item= {name:'test', price:4, quantity:1, total:3}
 //Main comp. Here we mount all components to be rendered
 function App() {
@@ -31,7 +32,7 @@ function App() {
             <Route path='/cart' element={<Cart  />}/>
             <Route exact path='/productdetail' element={<TestContainer  />}/>
             <Route exact path='/nosotros' element={<div>Página test para probar router</div>}/>
-            
+            <Route exact path='/search/:search' element={<SearchContainer  />}/>
             <Route exact path='/category/:category' element={<CategoryContainer  />}/>
             <Route exact path='/category/:category/product/:id' element={<ItemDetailContainer  />}/>
           </Routes>   
