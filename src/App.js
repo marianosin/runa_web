@@ -5,7 +5,7 @@ import './style/main.css';
 
 //Import components of app
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavbarComp from './components/navbar/NavbarComp';
+import CartContextProvider from './context/CartContext';
 import ItemListContainer from './components/items/ItemListContainer';
 import TestContainer from './components/tests/TestContainer';
 import ItemDetailContainer from './components/items/ItemDetailContainer';
@@ -22,7 +22,7 @@ function App() {
 
   
   return (
-    <>
+    <CartContextProvider>
       <div className="App">
         {/*Everything has to be inside this router */}
         <BrowserRouter>
@@ -44,7 +44,7 @@ function App() {
         </BrowserRouter>
 
       </div>
-    </>
+    </CartContextProvider>
   );
 }
 
