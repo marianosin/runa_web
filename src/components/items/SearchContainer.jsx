@@ -19,7 +19,7 @@ export default function SearchContainer() {
     console.log(searchProducts)
     return (
         <div style={{display: "flex"}}>
-                {(searchProducts.length > 0) ? searchProducts.map(p => <Item key={p.id} image={p.image} description={p.description} name={p.name} stock={p.stock} price={p.price} />) : <div >No results</div>}
+                {(searchProducts.length > 0) ? searchProducts.map(p => <Item key={p.id} id={p.id} category={p.category} image={p.image} description={p.description} name={p.name} stock={p.stock} price={p.price} />) : <div >No results</div>}
         </div>
   )
 }
