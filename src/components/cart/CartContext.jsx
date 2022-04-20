@@ -1,7 +1,7 @@
 import React, {createContext, useState} from "react";
 
 /* Create cartContext */
-const cartContext = createContext();
+const CartContext = createContext();
 
 /* Create CartProvider */
 /* This means we are creating a global state for the cart */	
@@ -10,7 +10,7 @@ const CartProvider = ({children}) => {
 
     /* Functions of this global variable */	
     /* Add to cart function */
-    const addToCart = (product) => console.log(product);
+    const addToCart = (product) => console.log(`Se añade al carrito el producto de itemDetail. El producto añadido es: "${product.name}"`);
     /* Remove from cart function */
     const removeFromCart = (product) => console.log(product);
     /* Buy all products function */
@@ -18,13 +18,14 @@ const CartProvider = ({children}) => {
 
     //Everything inside children has access to cartContext functionalities
     return (
-        <cartContext.Provider value={{cart, addToCart, removeFromCart, buyAllProducts}} >
+        <CartContext.Provider value={{cart, addToCart, removeFromCart, buyAllProducts}} >
             {children}
-        </cartContext.Provider>
+        </CartContext.Provider>
     );
      }
 
-export default cartContext;
+export default CartProvider;
+export {CartContext};
 
 /* To use this, is similar to the react router format.
  We just have to englobe the app in the provider */

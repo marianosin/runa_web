@@ -5,18 +5,17 @@ import './style/main.css';
 
 //Import components of app
 import 'bootstrap/dist/css/bootstrap.min.css';
-import CartContextProvider from './context/CartContext';
+import CartContextProvider from './components/cart/CartContext';
 import ItemListContainer from './components/items/ItemListContainer';
 import TestContainer from './components/tests/TestContainer';
 import ItemDetailContainer from './components/items/ItemDetailContainer';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import DynamicElement from './components/items/CategoryContainer';
+
 import CategoryContainer from './components/items/CategoryContainer';
-import ItemDetail from './components/items/ItemDetail';
 import Cart from './components/cart/Cart';
 import NavContainer from './components/navbar/NavContainer';
 import SearchContainer from './components/items/SearchContainer';
-const item= {name:'test', price:4, quantity:1, total:3}
+
 //Main comp. Here we mount all components to be rendered
 function App() {
 
