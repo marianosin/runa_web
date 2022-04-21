@@ -7,9 +7,22 @@ const CartContext = createContext();
 /* This means we are creating a global state for the cart */	
 const CartProvider = ({children}) => {
     const [ cart, setCart ] = useState([]);
-
+    
     /* Functions of this global variable */	
+    /*Cart clount function */
+    const countCart = (cart) => {
+        let sum = 0
+        for (let index = 0; index < cart.length; index++) {
+            
+            sum = sum + cart[index].quantity
+
+            
+        }
+        return (<div>({sum})</div>)
+         }
     /* Add to cart function */
+    
+    
     const addToCart = ({id, name, quantity, price, cart}) => {
         let item = {id, name, quantity, price, total: quantity * price};
         let item2 = cart.find(item => item.id === id);

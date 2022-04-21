@@ -4,13 +4,25 @@ import CartWidget from '../backups/CartWidget'
 import { Link } from 'react-router-dom'
 import {LinkContainer} from 'react-router-bootstrap'
 import { useState } from 'react'
+import { CartContext } from '../cart/CartContext'
+import { useContext } from 'react'
 //Navbar function containing component to walk around aplication.
 export default function NavbarComp({categories})  {
+    const {cart, countCart} = useContext(CartContext)
+    
     const [searchKey,setSearchKey] = useState('Buscar producto')
     function handleSearch(e){
         setSearchKey(e.target.value)
     }
     
+
+    /*sum of elements in cart */
+    let sum = 0
+    for (let index = 0; index < cart.length; index++) {
+        sum = sum + cart[index].quantity
+    }
+
+
     return (
       <div className='NavBar'>
         <Navbar bg="light" expand="lg">
@@ -47,7 +59,7 @@ export default function NavbarComp({categories})  {
                         </Nav.Link>
                     </Nav>
                     <LinkContainer to={'/cart'}>
-                        <Nav.Link href={'/cart'}><CartWidget  /></Nav.Link>
+                        <Nav.Link href={'/cart'}><CartWidget  />({sum}) </Nav.Link>
                     </LinkContainer>
                     
                     
