@@ -14,6 +14,6 @@ export default function NavContainer() {
     }, [cat])
     
   return (
-    <NavbarComp categories={cat}/>
+        <NavbarComp cat={cat} /> 
   )
 }

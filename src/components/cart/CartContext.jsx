@@ -1,4 +1,4 @@
-import React, {createContext, useState} from "react";
+import React, {createContext, useState, useEffect} from "react";
 
 /* Create cartContext */
 const CartContext = createContext();
@@ -11,26 +11,39 @@ const CartProvider = ({children}) => {
     /* Functions of this global variable */	
     /* Add to cart function */
     const addToCart = ({id, name, quantity, price, cart}) => {
-        let item = {id, name, quantity, price, cart}
-        //const item = cart.find(item => item.id === id);
-        if(cart.length !== 0){
-            setCart([item]);
-             }else {
+        let item = {id, name, quantity, price, total: quantity * price};
+        let item2 = cart.find(item => item.id === id);
+        if(item2){
+            item2.quantity += 1;
+            item2.total = item2.quantity * item2.price;
+            setCart([...cart]);
+        }else{
             setCart([...cart, item]);
         }
+        
+        
              
         
-        console.log(cart);
+        
     }
+    useEffect(() => {
+      
+        console.log(cart)
+      
+    }, [cart])
+    
     /* Remove from cart function */
-    const removeFromCart = (name) => console.log(name);
+    const removeFromCart = (id) =>{
+        let newCart = cart.filter(item => item.id !== id);
+        setCart([...newCart]);
+    };
     /* Buy all products function */
-    const buyAllProducts = () => console.log("Compra realizada");
+    const buyAllProducts = () => alert("Se realizó la compra");
     /* Clear all products function */
-    const clearCart = () => console.log("Borra contenido");
+    const clearCart = () => setCart([]);
     //Everything inside children has access to cartContext functionalities
     return (
-        <CartContext.Provider value={{cart, addToCart, removeFromCart, buyAllProducts, clearCart}} >
+        <CartContext.Provider value={{cart, addToCart, removeFromCart, buyAllProducts, clearCart, setCart}} >
             {children}
         </CartContext.Provider>
     );

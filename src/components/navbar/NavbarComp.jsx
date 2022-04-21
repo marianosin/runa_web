@@ -2,6 +2,7 @@ import React from 'react'
 import { Navbar, Nav, NavDropdown, Form, FormControl, Container, Button} from 'react-bootstrap'
 import CartWidget from '../backups/CartWidget'
 import { Link } from 'react-router-dom'
+import {LinkContainer} from 'react-router-bootstrap'
 import { useState } from 'react'
 //Navbar function containing component to walk around aplication.
 export default function NavbarComp({categories})  {
@@ -14,39 +15,55 @@ export default function NavbarComp({categories})  {
       <div className='NavBar'>
         <Navbar bg="light" expand="lg">
             <Container fluid>
-                <Link to={'/'} style={{textDecoration:'none'}} > <Navbar.Brand href="#">Runa Joyas</Navbar.Brand></Link>
-                <Navbar.Toggle aria-controls="navbarScroll" />
-                <Navbar.Collapse id="navbarScroll">
-                <Nav
-                    className="me-auto my-2 my-lg-0"
-                    style={{ maxHeight: '100px' }}
-                    navbarScroll
-                >
-                    <Nav.Link href={'/'}>Home</Nav.Link>
-                    <Nav.Link href={'/nosotros'}>Nosotros</Nav.Link>
-                    <NavDropdown title="Productos" id="navbarScrollingDropdown">
-                    <Nav.Link href={`/category/prendedores`}>Prendedores</Nav.Link>
-                    <Nav.Link href={`/category/collares`}>Collares</Nav.Link>
-                    <Nav.Link href={`/category/otros`}>Otros</Nav.Link>
+                    <LinkContainer to={'/'}><Navbar.Brand href="#">Runa Joyas</Navbar.Brand></LinkContainer>
                     
-                    </NavDropdown>
-                    <Nav.Link href="#" disabled>
-                    Contacto
-                    </Nav.Link>
-                </Nav>
-                <CartWidget  />
-                <Form className="d-flex">
-                    <FormControl
-                    type="search"
-                    placeholder={`${searchKey}`}
-                    className="me-2"
-                    aria-label="Search"
-                    onChange={handleSearch}
-                    />
-                    <Link to={`/search/${searchKey} `} className="btn btn-primary" >Buscar</Link>
-                </Form>
-                </Navbar.Collapse>
-                </Container>
+                    
+                    <Navbar.Toggle aria-controls="navbarScroll" />
+                    <Navbar.Collapse id="navbarScroll">
+                    <Nav
+                        className="me-auto my-2 my-lg-0"
+                        style={{ maxHeight: '100px' }}
+                        navbarScroll>
+                            <LinkContainer to="/">
+                            <Nav.Link >Home</Nav.Link>
+                                </LinkContainer>
+                            <LinkContainer to={"/nosotros"}>
+                                <Nav.Link >Nosotros</Nav.Link>
+                            </LinkContainer>
+                            
+                            <NavDropdown title="Productos" id="navbarScrollingDropdown">
+                            <LinkContainer to={'/category/prendedores'}>
+                                <Nav.Link >Prendedores</Nav.Link>
+                            </LinkContainer>
+                            <LinkContainer to={'/category/collares'}>
+                            <Nav.Link >Collares</Nav.Link>
+                            </LinkContainer>
+                            <LinkContainer to={'/category/otros'}>
+                            <Nav.Link >Otros</Nav.Link>
+                            </LinkContainer>
+                        </NavDropdown>
+                        <Nav.Link href="#" disabled>
+                        Contacto
+                        </Nav.Link>
+                    </Nav>
+                    <LinkContainer to={'/cart'}>
+                        <Nav.Link href={'/cart'}><CartWidget  /></Nav.Link>
+                    </LinkContainer>
+                    
+                    
+                    <Form className="d-flex">
+                        <FormControl
+                        type="search"
+                        placeholder={`${searchKey}`}
+                        className="me-2"
+                        aria-label="Search"
+                        onChange={handleSearch}
+                        />
+                        <Link to={`/search/${searchKey} `} className="btn btn-primary" >Buscar</Link>
+                    </Form>
+                    </Navbar.Collapse>
+                    
+            </Container>
         </Navbar>
       </div>
     )
