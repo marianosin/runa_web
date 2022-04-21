@@ -1,33 +1,36 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import {Button} from 'react-bootstrap'
+import { CartContext } from '../cart/CartContext'
 
 
 
-
-export default function ItemCount({stock, onAdd}){
-
-    const [count,setCount] = useState(1)
-    
+export default function ItemCount({id,name, stock, price, image }){
+    const {addToCart} = useContext(CartContext)
+    const [quantity, setQuantity] = useState(1)
+    const [added, setAdded] = useState(false)
     function add(){
-        if (count<stock) {
-            setCount(count + 1);
+        if(quantity < stock){
+            setQuantity(quantity + 1)
+          }
         }
-        
-    }
-    function substract() {
-        if (count > 0) {
-            setCount(count -1);
-        }
-        
-    }
-    const handleClick = () => {onAdd(count)}
+      function substract(){
+          if(quantity > 1){
+              setQuantity(quantity - 1)
+          }
+      }
+      function handleClick(){
+            addToCart({id, name, quantity, price, image})
+            setAdded(true)
+
+      }
     return (
  
          <div style={{marginTop: "30px"}}>
-             <Button onClick={substract} variant="danger">-</Button>
-            <p>{count} </p>
-             <Button onClick={add} variant="success">+</Button>
-             <Button onClick={handleClick} variant="primary">Agregar a carrito</Button>
+             {
+                    added ? <h3>{name} fue añadido</h3>:<div> <Button onClick={substract} variant="danger">-</Button><p>{quantity} </p><Button onClick={add} variant="success">+</Button></div>
+             }
+             
+             {(added !== true)?<Button onClick={()=>handleClick({id, name, quantity, price, image})} variant="primary">Agregar a carrito</Button>:<Button href={'/cart'} variant="primary">Ir al carrito</Button>}
          </div>
  
  
