@@ -5,7 +5,7 @@ import { CartContext } from '../cart/CartContext'
 
 
 export default function ItemCount({id,name, stock, price, image }){
-    const {addToCart} = useContext(CartContext)
+    const {addToCart, cart, setCart} = useContext(CartContext)
     const [quantity, setQuantity] = useState(1)
     const [added, setAdded] = useState(false)
     function add(){
@@ -19,7 +19,7 @@ export default function ItemCount({id,name, stock, price, image }){
           }
       }
       function handleClick(){
-            addToCart({id, name, quantity, price, image})
+            addToCart({id, name, quantity, price, image, cart, setCart})
             setAdded(true)
 
       }

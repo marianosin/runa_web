@@ -10,14 +10,16 @@ const CartProvider = ({children}) => {
 
     /* Functions of this global variable */	
     /* Add to cart function */
-    const addToCart = ({id, name, quantity, price}) => {
-        const item = cart.find(item => item.id === id);
-        if(item){
-            console.log("item en carrito");
-        }else{
-            cart.push({id, name, quantity, price} )
-            console.log("item añadido al carrito")
+    const addToCart = ({id, name, quantity, price, cart}) => {
+        let item = {id, name, quantity, price, cart}
+        //const item = cart.find(item => item.id === id);
+        if(cart.length !== 0){
+            setCart([item]);
+             }else {
+            setCart([...cart, item]);
         }
+             
+        
         console.log(cart);
     }
     /* Remove from cart function */
