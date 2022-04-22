@@ -1,14 +1,14 @@
 import React from 'react'
-import { Navbar, Nav, NavDropdown, Form, FormControl, Container, Button} from 'react-bootstrap'
+import { Navbar, Nav, NavDropdown, Form, FormControl, Container} from 'react-bootstrap'
 import CartWidget from '../backups/CartWidget'
 import { Link } from 'react-router-dom'
 import {LinkContainer} from 'react-router-bootstrap'
 import { useState } from 'react'
 import { CartContext } from '../cart/CartContext'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 //Navbar function containing component to walk around aplication.
 export default function NavbarComp({categories})  {
-    const {cart, countCart} = useContext(CartContext)
+    const {cart} = useContext(CartContext)
     
     const [searchKey,setSearchKey] = useState('Buscar producto')
     function handleSearch(e){
@@ -17,10 +17,17 @@ export default function NavbarComp({categories})  {
     
 
     /*sum of elements in cart */
-    let sum = 0
-    for (let index = 0; index < cart.length; index++) {
-        sum = sum + cart[index].quantity
-    }
+    const [sum, setSum] = useState(0)
+
+    //Using useEffetct to render component as it changes
+    useEffect(() => {
+        let auxSum = 0
+
+        for (let index = 0; index < cart.length; index++) {
+            auxSum = auxSum + cart[index].quantity
+        }
+        setSum(auxSum)
+    }, [cart])
 
 
     return (
