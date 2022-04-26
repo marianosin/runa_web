@@ -65,9 +65,8 @@ export default function NavbarComp({categories})  {
                         Contacto
                         </Nav.Link>
                     </Nav>
-                    <LinkContainer to={'/cart'}>
-                        <Nav.Link href={'/cart'}><CartWidget  />({sum}) </Nav.Link>
-                    </LinkContainer>
+                    {(cart.length > 0) ? <LinkContainer to={'/cart'}><Nav.Link href={'/cart'}><CartWidget  />({sum}) </Nav.Link></LinkContainer> : null}
+                    
                     
                     
                     <Form className="d-flex">

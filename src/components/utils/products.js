@@ -4,7 +4,7 @@ const products = [
         category: "prendedores",
         image:"https://http2.mlstatic.com/D_NQ_NP_916611-MLA49335814997_032022-O.webp",
         name: "Prendedor de plata",
-        stock: 13,
+        stock: 1,
         price: 2900,
         descriptionExtended: "Prendedor de plata de alta calidad. Texto extendido",
         description: "Descripcion de producto 1"

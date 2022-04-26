@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -14,14 +14,29 @@ import { CartContext } from '../cart/CartContext';
 export default function Item({id, category, name, stock, description, price, image}) {
   const {addToCart, cart, setCart} = useContext(CartContext)
   const [stop, setStop] = useState(false)
+  const [outOfStock, stOutOfStock] = useState(false)
+  
+    if (stock === 0) {
+      stOutOfStock(true)
+    }
+  
+
+  
+  
+
   function handleClick(){
     
-      let quantity = 1
+
+
       
-      while (stop !== true) {
+      let quantity = 1
+
+
+      
+      if (stop !== true) {
         addToCart({id, name, quantity, price, image, cart, setCart})
         setStop(true)
-      }
+      } 
       
       
 
@@ -51,7 +66,7 @@ export default function Item({id, category, name, stock, description, price, ima
      
       <CardActions>
         <IconButton color="secondary" aria-label="add to shopping cart">
-            <AddShoppingCartIcon onClick={handleClick} />
+            {((stop !== true) || (outOfStock !== false) ) ? <AddShoppingCartIcon onClick={handleClick} />: <AddShoppingCartIcon onClick={handleClick} disabled style={{opacity: "30%"}} />}
         </IconButton>
       </CardActions>
     </Card>
