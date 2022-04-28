@@ -15,6 +15,7 @@ import CategoryContainer from './components/items/CategoryContainer';
 import Cart from './components/cart/Cart';
 import NavContainer from './components/navbar/NavContainer';
 import SearchContainer from './components/items/SearchContainer';
+import FirestoreContainer from './components/firestore/FirestoreContainer';
 
 //Main comp. Here we mount all components to be rendered
 function App() {
@@ -34,6 +35,7 @@ function App() {
             <Route exact path='/search/:search' element={<SearchContainer  />}/>
             <Route exact path='/category/:category' element={<CategoryContainer  />}/>
             <Route exact path='/category/:category/product/:id' element={<ItemDetailContainer  />}/>
+            <Route exact path='/firestore' element={<FirestoreContainer  />}/>
           </Routes>   
           
 
