@@ -32,7 +32,7 @@ function App() {
             <Route path='/cart' element={<Cart  />}/>
             <Route exact path='/productdetail' element={<TestContainer  />}/>
             <Route exact path='/nosotros' element={<div>Página test para probar router</div>}/>
-            <Route exact path='/search/:search' element={<SearchContainer  />}/>
+            {/*<Route exact path='/search/:search' element={<SearchContainer  />}/>*/}
             <Route exact path='/category/:category' element={<CategoryContainer  />}/>
             <Route exact path='/category/:category/product/:id' element={<ItemDetailContainer  />}/>
             <Route exact path='/firestore' element={<FirestoreContainer  />}/>
