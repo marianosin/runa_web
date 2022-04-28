@@ -1,16 +1,30 @@
+import { query, collection, getFirestore, where, getDocs } from 'firebase/firestore'
 import React from 'react'
 import { useParams } from 'react-router-dom'
-
+import { useEffect, useState } from 'react'
 import products from '../utils/products'
 import CategoryList from './CategoryList'
 import Item from './Item'
 
 export default function CategoryContainer() {
   const {category} = useParams()
-  const categoryProducts = products.filter(p => p.category === category)
+  const [categoryList, setCategoryList] = useState([])
+
+  useEffect(()=>{
+    const db = getFirestore()
+
+    const products = query(collection(db, 'products'), where('category', '==', category))
+    getDocs(products).then((product) => {
+        
+        setCategoryList(product.docs.map((doc) => ({id: doc.id, ...doc.data()})))
+        
+    }
+    )
+ }, [category])
+
   return (
     <div style={{display: "flex"}}>
-        {categoryProducts.map((p) =>(
+        {categoryList.map((p) =>(
           <Item
           key= {p.id}
           category={p.category}
