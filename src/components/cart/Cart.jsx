@@ -18,9 +18,7 @@ export default function Cart() {
       function handleRemove(id){
           removeFromCart(id)
       }
-      function handleGoToLanding(){
-          window.location.href = '/'
-      }
+
      if (cart.length === 0) {
        return (
           <div>
