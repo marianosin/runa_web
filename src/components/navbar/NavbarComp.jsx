@@ -57,9 +57,9 @@ export default function NavbarComp({categories})  {
                             <LinkContainer to={'/category/collares'}>
                             <Nav.Link >Collares</Nav.Link>
                             </LinkContainer>
-                            <LinkContainer to={'/category/otros'}>
+                            {/*<LinkContainer to={'/category/otros'}>
                             <Nav.Link >Otros</Nav.Link>
-                            </LinkContainer>
+                            </LinkContainer>*/}
                         </NavDropdown>
                         <Nav.Link href="#" disabled>
                         Contacto
@@ -69,15 +69,16 @@ export default function NavbarComp({categories})  {
                     
                     
                     
-                    <Form className="d-flex">
+                    <Form className="d-flex" style={{display: 'none'}}>
                         <FormControl
                         type="search"
                         placeholder={`${searchKey}`}
                         className="me-2"
                         aria-label="Search"
                         onChange={handleSearch}
+                        style={{display: 'none'}}
                         />
-                        <Link to={`/search/${searchKey} `} className="btn btn-primary" >Buscar</Link>
+                        <Link to={`/search/${searchKey} `} className="btn btn-primary" style={{display: 'none'}}>Buscar</Link>
                     </Form>
                     </Navbar.Collapse>
                     
