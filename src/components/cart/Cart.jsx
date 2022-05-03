@@ -1,9 +1,17 @@
 import React, {useEffect, useState} from 'react'
 import { CartContext } from './CartContext'
+import { getFirestore, collection, addDoc } from 'firebase/firestore'
+import { Form, FormControl} from 'react-bootstrap'
 import { useContext } from 'react'
 import {Link} from 'react-router-dom'
 export default function Cart() {
      const {cart, removeFromCart, clearCart, buyAllProducts} = useContext(CartContext)
+     
+     const [name, setNamw] = useState('')
+     const [email, setEmail] = useState('')
+     
+     const [nextStep, setNextStep] = useState(false)
+     const [allSet, setAllSet] = useState(false)
      let [total, setTotal] = useState(0)
      
       useEffect(() => {
@@ -12,13 +20,34 @@ export default function Cart() {
         setTotal(auxTotal)
       }, [cart])
 
+      function handleName(e){
+        setNamw(e.target.value)
+      }
+      function handleEmail(e){
+        setEmail(e.target.value)
+      }
+      function handleConfirm (e){
+        e.preventDefault()
+        let auxPurchise = {name: name, email: email, products: cart}
+        
+        const db = getFirestore()
+        const orders = collection(db, 'orders')
+        addDoc(orders, auxPurchise).then(() => {alert("Su compra fue enviada correctamente. Será contactado para coordinar entrega.")
+         setAllSet(true)
+        clearCart()
+        })
+
+      }
+
      function handleClearing(){
           clearCart()
       }
       function handleRemove(id){
           removeFromCart(id)
       }
-
+      function handleBuy(){
+        setNextStep(true)
+      }
      if (cart.length === 0) {
        return (
           <div>
@@ -37,7 +66,8 @@ export default function Cart() {
          </div>) : <div>No hay productos en el carrito</div>}
          <button onClick={handleClearing}>Borrar todo</button>
          <div>Total a pagar: {total} </div>
-         <button onClick={buyAllProducts}>Comprar</button>
+
+         {(!allSet) ?(!nextStep) ? <button onClick={handleBuy}>Continuar compra</button>: <Form><FormControl type='text'placeholder='Nombre y apellido' className='me-2' aria-label='name' onChange={handleName}></FormControl><FormControl type='email'placeholder='email' className='me-2' aria-label='email' onChange={handleEmail}></FormControl> <button onClick={handleConfirm} className="btn btn-primary" >Comprar</button> </Form>: <div ><h2>Gracias por su compra!</h2> </div>}
     </div>
   )
 } }
