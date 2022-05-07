@@ -32,7 +32,7 @@ export default function Cart() {
         
         const db = getFirestore()
         const orders = collection(db, 'orders')
-        const {id} = addDoc(orders, auxPurchise).then(({id}) => {alert("Su compra fue enviada correctamente. Será contactado para coordinar entrega.")
+        addDoc(orders, auxPurchise).then(({id}) => {alert("Su compra fue enviada correctamente. Será contactado para coordinar entrega.")
          setAllSet(true)
          console.log(id)
          setProductID(id)
