@@ -6,7 +6,7 @@ import { useContext } from 'react'
 import {Link} from 'react-router-dom'
 export default function Cart() {
      const {cart, removeFromCart, clearCart, buyAllProducts} = useContext(CartContext)
-     
+     const [productID, setProductID] = useState('')
      const [name, setNamw] = useState('')
      const [email, setEmail] = useState('')
      
@@ -32,11 +32,12 @@ export default function Cart() {
         
         const db = getFirestore()
         const orders = collection(db, 'orders')
-        addDoc(orders, auxPurchise).then(() => {alert("Su compra fue enviada correctamente. Será contactado para coordinar entrega.")
+        const {id} = addDoc(orders, auxPurchise).then(({id}) => {alert("Su compra fue enviada correctamente. Será contactado para coordinar entrega.")
          setAllSet(true)
-        clearCart()
+         console.log(id)
+         setProductID(id)
         })
-
+        
       }
 
      function handleClearing(){
@@ -67,7 +68,7 @@ export default function Cart() {
          <button onClick={handleClearing}>Borrar todo</button>
          <div>Total a pagar: {total} </div>
 
-         {(!allSet) ?(!nextStep) ? <button onClick={handleBuy}>Continuar compra</button>: <Form><FormControl type='text'placeholder='Nombre y apellido' className='me-2' aria-label='name' onChange={handleName}></FormControl><FormControl type='email'placeholder='email' className='me-2' aria-label='email' onChange={handleEmail}></FormControl> <button onClick={handleConfirm} className="btn btn-primary" >Comprar</button> </Form>: <div ><h2>Gracias por su compra!</h2> </div>}
+         {(!allSet) ?(!nextStep) ? <button onClick={handleBuy}>Continuar compra</button>: <Form><FormControl type='text'placeholder='Nombre y apellido' className='me-2' aria-label='name' onChange={handleName}></FormControl><FormControl type='email'placeholder='email' className='me-2' aria-label='email' onChange={handleEmail}></FormControl> <button onClick={handleConfirm} className="btn btn-primary" >Comprar</button> </Form>: <div ><h2>Gracias por su compra! Su ID de comra es: {productID} </h2> </div>}
     </div>
   )
 } }
