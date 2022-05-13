@@ -29,7 +29,7 @@ export default function ItemCount({id,name, stock, price, image }){
              {
                     added ? <h3>{name} fue añadido</h3>:<div> <Button onClick={substract} variant="danger">-</Button><p>{quantity} </p><Button onClick={add} variant="success">+</Button></div>
              }
-             {/*<Button onClick={()=>handleClick({id, name, quantity, price, image})} variant="primary">Agregar a carrito</Button>*/}
+             
              {(added !== true)?<Button onClick={()=>handleClick({id, name, quantity, price, image})} variant="primary">Agregar a carrito</Button>:<Link to={`/cart`} className="btn btn-primary" >Ir al carrito</Link>}
          </div>
  

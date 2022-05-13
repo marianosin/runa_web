@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -62,11 +62,10 @@ export default function Item({id, category, name, stock, description, price, ima
           </Typography>
         </CardContent>
       </CardActionArea>
-      {/*</Link>*/}
-     
+    
       <CardActions>
-        <IconButton color="secondary" aria-label="add to shopping cart">
-            {((stop !== true) || (outOfStock !== false) ) ? <AddShoppingCartIcon onClick={handleClick} />: <AddShoppingCartIcon onClick={handleClick} disabled style={{opacity: "30%"}} />}
+        <IconButton color="secondary" aria-label="add to shopping cart" onClick={handleClick}>
+            {((stop !== true) || (outOfStock !== false) ) ? <AddShoppingCartIcon  />: <AddShoppingCartIcon  disabled style={{opacity: "30%"}} />}
         </IconButton>
       </CardActions>
     </Card>

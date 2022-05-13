@@ -5,7 +5,7 @@ import { Form, FormControl} from 'react-bootstrap'
 import { useContext } from 'react'
 import {Link} from 'react-router-dom'
 export default function Cart() {
-     const {cart, removeFromCart, clearCart, buyAllProducts} = useContext(CartContext)
+     const {cart, removeFromCart, clearCart} = useContext(CartContext)
      const [productID, setProductID] = useState('')
      const [name, setNamw] = useState('')
      const [email, setEmail] = useState('')
@@ -16,7 +16,7 @@ export default function Cart() {
      
       useEffect(() => {
         let auxTotal = 0
-        cart.map(p => {auxTotal = auxTotal + p.price * p.quantity})
+        cart.map((p) => {auxTotal = auxTotal + p.price * p.quantity})
         setTotal(auxTotal)
       }, [cart])
 
@@ -34,7 +34,7 @@ export default function Cart() {
         const orders = collection(db, 'orders')
         addDoc(orders, auxPurchise).then(({id}) => {alert("Su compra fue enviada correctamente. Será contactado para coordinar entrega.")
          setAllSet(true)
-         console.log(id)
+         
          setProductID(id)
         })
         

@@ -2,8 +2,7 @@ import { query, collection, getFirestore, where, getDocs } from 'firebase/firest
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import products from '../utils/products'
-import CategoryList from './CategoryList'
+
 import Item from './Item'
 
 export default function CategoryContainer() {

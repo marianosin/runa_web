@@ -2,10 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { collection, getDocs, getFirestore, query } from 'firebase/firestore'
-import products from '../utils/products'
-import ItemCount from './ItemCount'
 import ItemList from '../items/ItemList';
-import isLoaded from '../utils/isLoaded';
 export default function ItemListContainer(){
     const [loading, setLoading] = useState(true)
 
