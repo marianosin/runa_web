@@ -1,5 +1,5 @@
 /* Context to access the cart from different components of the app */
-import React, {createContext, useState, useEffect} from "react";
+import React, {createContext, useState} from "react";
 
 /* Create cartContext */
 const CartContext = createContext();

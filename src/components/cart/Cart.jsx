@@ -3,7 +3,7 @@
 import React, {useEffect, useState} from 'react'
 import { CartContext } from './CartContext'
 import { getFirestore, collection, addDoc } from 'firebase/firestore'
-import {CircularProgress} from '@material-ui/core'
+
 import { useContext } from 'react'
 import {Link} from 'react-router-dom'
 import Table from '@mui/material/Table';
