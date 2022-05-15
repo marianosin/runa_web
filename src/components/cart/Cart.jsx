@@ -3,7 +3,7 @@
 import React, {useEffect, useState} from 'react'
 import { CartContext } from './CartContext'
 import { getFirestore, collection, addDoc } from 'firebase/firestore'
-
+import {CircularProgress} from '@material-ui/core'
 import { useContext } from 'react'
 import {Link} from 'react-router-dom'
 import Table from '@mui/material/Table';
@@ -47,7 +47,7 @@ export default function Cart() {
      const [name, setNamw] = useState('')
      const [email, setEmail] = useState('')
      
-     const [nextStep, setNextStep] = useState(false)
+     const [nextStep, setNextStep] = useState(true)
      const [allSet, setAllSet] = useState(false)
      /* Captures the total amount a buyer has to pay */
      let [total, setTotal] = useState(0)
@@ -68,7 +68,7 @@ export default function Cart() {
       function handleConfirm (e){
         e.preventDefault()
         let auxPurchise = {name: name, email: email, products: cart}
-        
+        alert('Su compra está siendo procesada. En breve le aparecerá su ID de compra')
         const db = getFirestore()
         const orders = collection(db, 'orders')
         addDoc(orders, auxPurchise).then(({id}) => {alert("Su compra fue enviada correctamente. Será contactado para coordinar entrega.")
