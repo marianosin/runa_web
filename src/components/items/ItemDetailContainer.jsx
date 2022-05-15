@@ -1,3 +1,4 @@
+/* Container of ItemDetail */
 import React, { useState, useEffect } from 'react'
 import ItemDetail from './ItemDetail'
 import { doc, getDoc, getFirestore} from 'firebase/firestore'

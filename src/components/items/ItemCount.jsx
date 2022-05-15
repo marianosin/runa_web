@@ -1,3 +1,4 @@
+/* Component to count how many irems of a certain products the user wants to buy */
 import { useContext, useState } from 'react'
 import {Button} from 'react-bootstrap'
 import { CartContext } from '../cart/CartContext'
@@ -5,9 +6,11 @@ import { Link } from 'react-router-dom'
 
 
 export default function ItemCount({id,name, stock, price, image }){
+    /* Calls context to add items to cart */
     const {addToCart, cart, setCart} = useContext(CartContext)
     const [quantity, setQuantity] = useState(1)
     const [added, setAdded] = useState(false)
+    /* Controls of counter */
     function add(){
         if(quantity < stock){
             setQuantity(quantity + 1)
@@ -32,9 +35,6 @@ export default function ItemCount({id,name, stock, price, image }){
              
              {(added !== true)?<Button onClick={()=>handleClick({id, name, quantity, price, image})} variant="primary">Agregar a carrito</Button>:<Link to={`/cart`} className="btn btn-primary" >Ir al carrito</Link>}
          </div>
- 
- 
     )
  }
- 
  

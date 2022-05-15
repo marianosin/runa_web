@@ -1,3 +1,4 @@
+/* Context to access the cart from different components of the app */
 import React, {createContext, useState, useEffect} from "react";
 
 /* Create cartContext */
@@ -39,11 +40,7 @@ const CartProvider = ({children}) => {
         
         
     }
-    useEffect(() => {
-      
-        console.log(cart)
-      
-    }, [cart])
+
     
     /* Remove from cart function */
     const removeFromCart = (id) =>{
